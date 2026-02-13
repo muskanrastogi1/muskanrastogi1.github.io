@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- page shadow -->
+  <rect x="8" y="4" width="19" height="25" rx="1.5" fill="#e8e0e0" opacity="0.4"/>
+  <!-- main page -->
+  <rect x="6" y="3" width="19" height="25" rx="1.5" fill="#fff9fb" stroke="#4a4a4a" stroke-width="0.8"/>
+  <!-- M letterform -->
+  <text x="15.5" y="20.5" font-family="Georgia, serif" font-size="16" font-weight="bold" fill="#1a1a1a" text-anchor="middle">M</text>
+  <!-- subtle underline -->
+  <line x1="10" y1="22.5" x2="21" y2="22.5" stroke="#e11d48" stroke-width="1" opacity="0.6"/>
+</svg>

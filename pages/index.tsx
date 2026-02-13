@@ -1,14 +1,13 @@
 import { useState, useEffect, useRef } from "react";
+import Head from "next/head";
 
 const THEMES = [
-  { bg: "linear-gradient(135deg, #fce7f3 0%, #fbcfe8 100%)", text: "#9d174d" },
-  { bg: "linear-gradient(135deg, #e8e4dc 0%, #d4cfc4 100%)", text: "#3d3229" },
-  { bg: "linear-gradient(135deg, #fef3c7 0%, #fde68a 100%)", text: "#92400e" },
-  { bg: "linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%)", text: "#1e3a5f" },
-  { bg: "linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%)", text: "#065f46" },
-  { bg: "linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%)", text: "#3730a3" },
-  { bg: "linear-gradient(135deg, #ffedd5 0%, #fed7aa 100%)", text: "#9a3412" },
-  { bg: "linear-gradient(135deg, #f3e8ff 0%, #e9d5ff 100%)", text: "#5b21b6" },
+  { bg: "linear-gradient(135deg, #fdf2f8 0%, #fce7f3 100%)", text: "#831843" },
+  { bg: "linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%)", text: "#581c87" },
+  { bg: "linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%)", text: "#0c4a6e" },
+  { bg: "linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%)", text: "#78350f" },
+  { bg: "linear-gradient(135deg, #fff1f2 0%, #ffe4e6 100%)", text: "#881337" },
+  { bg: "linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%)", text: "#3b0764" },
 ];
 
 export default function Home() {
@@ -17,10 +16,16 @@ export default function Home() {
   cycleColor.current = () => setColorIndex((i) => (i + 1) % THEMES.length);
 
   useEffect(() => {
+    document.body.style.transition = "background 2s ease, color 2s ease";
     document.body.style.background = THEMES[colorIndex].bg;
     document.body.style.backgroundAttachment = "fixed";
     document.body.style.color = THEMES[colorIndex].text;
   }, [colorIndex]);
+
+  useEffect(() => {
+    const timer = setTimeout(() => cycleColor.current(), 3500);
+    return () => clearTimeout(timer);
+  }, []);
 
   useEffect(() => {
     const handleClick = (e: MouseEvent) => {
@@ -32,11 +37,15 @@ export default function Home() {
   }, []);
 
   return (
-    <div style={{ maxWidth: "650px", margin: "0 auto", padding: "6rem 1.5rem 3rem" }} className="paper-ruled">
+    <>
+    <Head>
+      <title>Muskan Rastogi</title>
+    </Head>
+    <div style={{ maxWidth: "650px", margin: "0 auto", padding: "6rem 1.5rem 3rem" }} className="paper-ruled page-enter">
 
         <header className="mb-10">
-          <h1 className="font-bold lowercase" style={{ fontSize: "2rem", lineHeight: "1.6rem" }}>
-            muskan rastogi <span style={{ color: "#e11d48", fontSize: "1.6rem" }}>&#10084;&#65039;</span>
+          <h1 className="font-bold lowercase cursor-blink" style={{ fontSize: "2rem", lineHeight: "1.6rem" }}>
+            muskan rastogi
           </h1>
           <p className="lowercase mt-1" style={{ fontSize: "1.1rem", opacity: 0.6 }}>
             product · design · building things that matter
@@ -111,9 +120,10 @@ export default function Home() {
         </section>
 
         <footer className="mt-16 pt-6 lowercase" style={{ fontSize: "0.95rem", opacity: 0.5, borderTop: "1px solid currentColor", textAlign: "center" }}>
-          built w love <span style={{ color: "#e11d48", opacity: 1 }}>&lt;3</span>
+          built with love <span style={{ color: "#e11d48", opacity: 1 }}>&#10084;&#65039;</span>
         </footer>
 
     </div>
+    </>
   );
 }
