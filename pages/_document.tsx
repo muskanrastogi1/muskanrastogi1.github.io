@@ -4,7 +4,7 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head />
-      <body className="min-h-screen antialiased" style={{ background: "linear-gradient(135deg, #e8e4dc 0%, #d4cfc4 100%)" }}>
+      <body className="min-h-screen antialiased" style={{ background: "linear-gradient(135deg, #fce7f3 0%, #fbcfe8 100%)" }}>
         <Main />
         <NextScript />
       </body>

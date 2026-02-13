@@ -1,11 +1,11 @@
 import { useState, useEffect, useRef } from "react";
 
 const THEMES = [
+  { bg: "linear-gradient(135deg, #fce7f3 0%, #fbcfe8 100%)", text: "#9d174d" },
   { bg: "linear-gradient(135deg, #e8e4dc 0%, #d4cfc4 100%)", text: "#3d3229" },
   { bg: "linear-gradient(135deg, #fef3c7 0%, #fde68a 100%)", text: "#92400e" },
   { bg: "linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%)", text: "#1e3a5f" },
   { bg: "linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%)", text: "#065f46" },
-  { bg: "linear-gradient(135deg, #fce7f3 0%, #fbcfe8 100%)", text: "#9d174d" },
   { bg: "linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%)", text: "#3730a3" },
   { bg: "linear-gradient(135deg, #ffedd5 0%, #fed7aa 100%)", text: "#9a3412" },
   { bg: "linear-gradient(135deg, #f3e8ff 0%, #e9d5ff 100%)", text: "#5b21b6" },
@@ -36,7 +36,7 @@ export default function Home() {
 
         <header className="mb-10">
           <h1 className="font-bold lowercase" style={{ fontSize: "2rem", lineHeight: "1.6rem" }}>
-            muskan rastogi
+            muskan rastogi <span style={{ color: "#e11d48", fontSize: "1.6rem" }}>&#10084;&#65039;</span>
           </h1>
           <p className="lowercase mt-1" style={{ fontSize: "1.1rem", opacity: 0.6 }}>
             product · design · building things that matter
@@ -100,7 +100,7 @@ export default function Home() {
 
         <section className="mb-10">
           <h2 className="font-bold lowercase mb-4" style={{ fontSize: "1.3rem", lineHeight: "1.6rem" }}>
-            contact:
+            contact me:
           </h2>
           <ul className="list-none space-y-2 lowercase" style={{ fontSize: "1.2rem", lineHeight: "1.6rem" }}>
             <li><a href="mailto:muskanrastogi1730@gmail.com" className="underline hover:no-underline" style={{ color: "#e11d48" }}>muskanrastogi1730@gmail.com</a></li>
